@@ -1,0 +1,19 @@
+img
+{
+  width: 100%; height: auto;
+}
+
+main {
+  padding-left: 300px;
+  padding-top: 12px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+
+nav {
+  height: 56px;
+  line-height: 56px;
+}

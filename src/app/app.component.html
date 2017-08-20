@@ -20,16 +20,37 @@
 
 <!-- Main Content-->
 <main>
-  <div class="row">
-    <div class="col s12">
-      <nav class="grey darken-3">
-        <div class="nav-wrapper">
-          <div class="col s12">
-            <a href="#!" class="breadcrumb"> <span>Courses</span> </a>
-            <a href="#!" class="breadcrumb"> <span>Nouvelles Courses</span> </a>
+  <div *ngIf="!isLoading" class="content-wrapper">
+    <div class="row">
+      <div class="col s12">
+        <nav class="grey darken-3">
+          <div class="nav-wrapper">
+            <div class="col s12">
+              <a href="#!" class="breadcrumb"> <span>Courses</span> </a>
+              <a href="#!" class="breadcrumb"> <span>Nouvelles Courses</span> </a>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <pre>{{content | json}}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <button (click)="updateData()"  mz-button>
+          Envoyer des donner :)
+        </button>
+      </div>
     </div>
   </div>
+  <div *ngIf="isLoading" class="loader absolute">
+    <mz-spinner
+      [color]="'blue'"
+      [size]="'big'">
+    </mz-spinner>
+  </div>
 </main>
+
